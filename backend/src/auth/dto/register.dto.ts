@@ -12,4 +12,10 @@ export class RegisterDto {
 
   @ApiProperty({ required: false })
   lastName?: string;
+
+  @ApiProperty({ required: false, description: 'Name of the organization to create (for first user)' })
+  organizationName?: string;
+
+  @ApiProperty({ required: false, description: 'Invitation token (for invited users)' })
+  invitationToken?: string;
 }
