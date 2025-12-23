@@ -60,10 +60,6 @@ export class CandidatesController {
   ) {
     const candidates: Candidate[] = [];
     for (const file of files) {
-      // For bulk upload, we might not want to apply the same name to all.
-      // But for simplicity, if one file is uploaded, we use the DTO.
-      // If multiple, we might just use the DTO for all (or ignore).
-      // Let's pass the DTO.
       const candidate = await this.candidatesService.create(createCandidateDto, file);
       candidates.push(candidate);
     }
